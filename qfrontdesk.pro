@@ -7,6 +7,8 @@
 QT       += network
 QT       -= gui
 
+CONFIG += shared_and_static
+
 TARGET = qfrontdesk
 TEMPLATE = lib
 
@@ -22,5 +24,3 @@ HEADERS += qfrontdesk.h\
     requestmanager.h \
     request.h \
     arguments.h
-
-unix:macx: LIBS += -lgrantlee_core

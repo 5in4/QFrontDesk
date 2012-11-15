@@ -1,6 +1,8 @@
 #ifndef ARGUMENTS_H
 #define ARGUMENTS_H
 
+#include <qfrontdesk_global.h>
+
 #include <QObject>
 #include <QList>
 #include <QString>
@@ -12,7 +14,7 @@ struct args{
 };
 
 
-class Arguments : public QObject
+class QFRONTDESKSHARED_EXPORT Arguments : public QObject
 {
     Q_OBJECT
 public:

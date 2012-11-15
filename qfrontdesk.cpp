@@ -21,8 +21,8 @@ QFrontDesk::QFrontDesk(int port, int slots_max, QString static_serve_path, QObje
         ip_address = QHostAddress(QHostAddress::LocalHost).toString();
     }
 
-    g_engine = new Engine(this);
-    g_loader = FileSystemTemplateLoader::Ptr(new FileSystemTemplateLoader());
+    //g_engine = new Engine(this);
+    //g_loader = FileSystemTemplateLoader::Ptr(new FileSystemTemplateLoader());
 
     this->static_serve_path = static_serve_path;
 }
@@ -33,7 +33,7 @@ QFrontDesk::~QFrontDesk() {
 }
 
 void QFrontDesk::setActive(bool active) {
-    if(active and !isListening()) {
+    if(active && !isListening()) {
         if(listen(QHostAddress(ip_address), port)) {
             qDebug() << "QFrontDesk started on" << QString("http://%1:%2/").arg(ip_address, QString("%1").arg(port));
         } else {
@@ -41,7 +41,7 @@ void QFrontDesk::setActive(bool active) {
         }
         return;
     }
-    if(!active and isListening()) {
+    if(!active && isListening()) {
         close();
         qDebug() << "QFrontDesk stopped";
         return;
@@ -50,7 +50,7 @@ void QFrontDesk::setActive(bool active) {
 
 
 void QFrontDesk::incomingConnection(int socket) {
-    qDebug() << "incoming connection";
+    //qDebug() << "incoming connection";
     r = rm->getFreeSlot();
     if(!r) {
         qDebug() << "no free slots";
@@ -124,15 +124,15 @@ void QFrontDesk::resolveRoute(QString route, Arguments *arg, QTcpSocket *s) {
 }
 
 
-void QFrontDesk::setTemplateDirs(QStringList dirs) {
-    g_loader->setTemplateDirs(dirs);
-    return g_engine->addTemplateLoader(g_loader);
-}
+//void QFrontDesk::setTemplateDirs(QStringList dirs) {
+//    g_loader->setTemplateDirs(dirs);
+//    return g_engine->addTemplateLoader(g_loader);
+//}
 
 
-Template QFrontDesk::loadTemplate(QString tpl) {
-    return g_engine->loadByName(tpl);
-}
+//Template QFrontDesk::loadTemplate(QString tpl) {
+//    return g_engine->loadByName(tpl);
+//}
 
 
 QString QFrontDesk::getUrl() {

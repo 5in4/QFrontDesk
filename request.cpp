@@ -6,7 +6,6 @@ Request::Request(QObject *parent) :
     r_free = true;
 }
 
-
 bool Request::isFree() {
     return r_free;
 }

@@ -1,10 +1,7 @@
 #ifndef QFRONTDESK_H
 #define QFRONTDESK_H
 
-#include <grantlee_core.h>
-#include <grantlee/engine.h>
-#include <grantlee/template.h>
-#include <grantlee/context.h>
+#include <qfrontdesk_global.h>
 
 #include <QNetworkInterface>
 #include <QTcpServer>
@@ -19,9 +16,7 @@
 #include "requestmanager.h"
 #include "request.h"
 
-using namespace Grantlee;
-
-class QFrontDesk : public QTcpServer {
+class QFRONTDESKSHARED_EXPORT QFrontDesk : public QTcpServer {
 
     Q_OBJECT
 public:
@@ -31,8 +26,8 @@ public:
     void incomingConnection(int socket);
 
     virtual QString routing(QString route, Arguments *arg) = 0;
-    void setTemplateDirs(QStringList dirs);
-    Template loadTemplate(QString tpl);
+    //void setTemplateDirs(QStringList dirs);
+    //Template loadTemplate(QString tpl);
     QString getUrl();
 
     QString ip_address;
@@ -44,9 +39,9 @@ private:
     Request *r;
     QTcpSocket *s;
 
-    FileSystemTemplateLoader::Ptr g_loader;
-    Engine *g_engine;
-    Template g_template;
+    //FileSystemTemplateLoader::Ptr g_loader;
+    //Engine *g_engine;
+    //Template g_template;
 
 signals:
 

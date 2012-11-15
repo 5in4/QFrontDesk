@@ -1,6 +1,8 @@
 #ifndef REQUEST_H
 #define REQUEST_H
 
+#include <qfrontdesk_global.h>
+
 #include <QObject>
 #include <QTcpSocket>
 #include <QTextStream>
@@ -11,7 +13,7 @@
 #include "arguments.h"
 
 
-class Request : public QObject
+class QFRONTDESKSHARED_EXPORT Request : public QObject
 {
     Q_OBJECT
 public:

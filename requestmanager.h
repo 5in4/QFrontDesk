@@ -1,12 +1,14 @@
 #ifndef REQUESTMANAGER_H
 #define REQUESTMANAGER_H
 
+#include <qfrontdesk_global.h>
+
 #include <QObject>
 #include <QList>
 
 #include <request.h>
 
-class RequestManager : public QObject
+class QFRONTDESKSHARED_EXPORT RequestManager : public QObject
 {
     Q_OBJECT
 public:
