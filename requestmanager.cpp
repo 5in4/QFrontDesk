@@ -1,6 +1,6 @@
 #include "requestmanager.h"
 
-RequestManager::RequestManager(int slots_max = 10, QObject *parent = 0) :
+RequestManager::RequestManager(int slots_max, QObject *parent) :
     QObject(parent)
 {
     this->slots_max = slots_max;

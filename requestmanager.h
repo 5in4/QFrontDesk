@@ -12,7 +12,7 @@ class QFRONTDESKSHARED_EXPORT RequestManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit RequestManager(int slots_max, QObject *parent);
+    explicit RequestManager(int slots_max = 10, QObject *parent = 0);
 
     Request *getFreeSlot();
 
