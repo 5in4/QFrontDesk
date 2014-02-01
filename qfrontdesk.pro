@@ -11,6 +11,7 @@ CONFIG += shared_and_static
 
 TARGET = qfrontdesk
 TEMPLATE = lib
+VERSION = 1.1
 
 DEFINES += QFRONTDESK_LIBRARY
 
